@@ -22,12 +22,16 @@ function reverseInt1(n) {
 
 
 //solution 2
-function reverseInt(n) {
+function reverseInt2(n) {
     const sign = Math.sign(n);
     const number = n * sign;
     return +number.toString().split('').reverse().join('') * sign;
 }
 
-reverseInt(-51);
+//solution 3
+function reverseInt(n) {
+    const reverseStr = n.toString().split('').reverse().join('');
+    return parseInt(reverseStr) * Math.sign(n);
+}
 
 module.exports = reverseInt;
