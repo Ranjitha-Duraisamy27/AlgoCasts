@@ -13,12 +13,12 @@ function palindrome1(str) {
 }
 
 //solution 2
-function palindrome(str) {
+function palindrome2(str) {
     let isPalindrome = true;
     for(let i = 0; i < str.length / 2; i++) {
-        const first = str[i];
-        const last = str[str.length - (i + 1)];
-        if(first !== last) {
+        const firstltr = str[i];
+        const secondLtr = str[str.length - (i + 1)];
+        if(firstltr !== secondLtr) {
             isPalindrome = false;
             break;
         }
@@ -26,5 +26,9 @@ function palindrome(str) {
     return isPalindrome;
 }
 
+//solution 3
+function palindrome(str) {
+    return str.split('').every((character, index) => character === str[str.length - index - 1]);
+}
 
 module.exports = palindrome;
